@@ -197,7 +197,7 @@
         <v-flex text-xs-center>
           <v-card flat tile color="primary" class="white--text">
             <v-card-text class="white--text pt-0">
-              Store S.T &copy;2020
+              Store S.T &copy; {{ actualYear }} - Todos los derechos reservados
             </v-card-text>
           </v-card>
         </v-flex>
@@ -228,6 +228,9 @@ export default {
     },
     esVendedor(){
       return this.$store.state.usuario && this.$store.state.usuario.rol == 'Vendedor';
+    },
+    actualYear(){
+      return new Date().getFullYear();
     }
   },
   created(){
